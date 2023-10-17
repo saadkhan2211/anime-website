@@ -1,21 +1,25 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Shop from './Pages/Shop/Shop';
-import Login from './Pages/Login/Login';
-import Cart from './Pages/Cart/Cart';
-import Home from './Pages/Home/Home';
+import Landing from './Pages/Landing';
+import Anime from './Pages/Anime';
+import Login from './Pages/Login';
+
 
 const App = () => {
   return (
     <div className="App">
       <Router>
-        <NavBar/>
         <Routes>
-          <Route path='/'element={<Home/>}/>
-          <Route path='/shop' element={<Shop/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/' element={<Landing />}/>
+
+          <Route path='/anime' element={
+            <div>
+              {/* <NavBar/> */}
+              <Anime/>
+            </div>
+          }/>
+
+          <Route path='/auth' element={<Login/>}/>
         </Routes>
       </Router>
     </div>
